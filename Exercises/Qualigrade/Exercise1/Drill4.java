@@ -1,5 +1,3 @@
-package Exercises.Exercise1;
-
 import java.util.Scanner;
 
 public class Drill4 {

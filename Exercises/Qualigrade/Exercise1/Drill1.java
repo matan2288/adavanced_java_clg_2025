@@ -1,5 +1,3 @@
-package Exercises.Exercise1;
-
 import java.util.Scanner;
 
 // Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
