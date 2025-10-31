@@ -1,6 +1,4 @@
 import java.util.Scanner;
-
-// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
 public class Drill1 {
 
     public static void main(String[] args) {
