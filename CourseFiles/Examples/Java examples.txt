@@ -1,0 +1,1857 @@
+---------
+Lecture 1
+---------
+
+/*  A Java program to print the message ‘Hello, world!’
+    This is the traditional first program in any language... */
+public class HelloWorld
+{
+  public static void main (String[] args) // explained later!
+  {
+    System.out.println("Hello, world!");
+  }
+}
+
+---------
+
+/*  A Java program to print the message ‘Hello, world!’
+    This is the traditional first program in any language... */
+public class HelloWorld{public static void main (String[] args) // explained later!
+{System.out.println("Hello, world!");}}
+
+---------
+
+public class StringDemo {
+  public static void main (String[] args) {
+    System.out.println("He said \"Hello\" to me");
+    System.out.println("C:\\Windows\\System");
+    System.out.println("Dear Sir,\nHello!");
+    System.out.println("This is a long string that I want to be able to "
+                       + "split across several lines.");
+    System.out.println("text");
+    System.out.print("text\n");
+    System.out.println("The answer is " + (45 - 3));
+    System.out.println("The answer is " + "42");
+    System.out.println("The answer is 42");
+    System.out.println("The answer is " + 39 + 3);
+    System.out.println("The answer is " + (39 + 3));
+  }
+}
+
+Lecture 2
+---------
+
+public class AssignmentDemo {
+  public static void main (String[] args) {
+    int a, b, c;
+    a = 5;          // set a to 5
+    b = a + 3;      // set b to 5 + 3 = 8
+    c = a * b + 1;  // set c to 5 x 8 + 1 = 41
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    c = b + 2 * a;  // set c to 8 + 2 x 5 = 18
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    a = a + 1;      // set a to 5 + 1 = 6
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    a = a + 1;      // set a to 6 + 1 = 7
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    b = b * 2;      // set b to 8 x 2 = 16
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class ScannerDemo {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner("123  456");
+    int x = scan.nextInt();
+    int y = scan.nextInt();
+    System.out.println("x = " + x);
+    System.out.println("y = " + y);
+  }
+}
+
+---------
+
+public class StringDemo {
+  public static void main (String[] args) {
+    String s = "Good Morning";
+    System.out.println("s == " + s);
+    System.out.println("s.length() == " + s.length());
+    System.out.println("s.toLowerCase() == " + s.toLowerCase());
+    System.out.println("s.toUpperCase() == " + s.toUpperCase());
+    System.out.println("s.indexOf(\"G\") == " + s.indexOf("G"));
+    System.out.println("s.indexOf(\"oo\") == " + s.indexOf("oo"));
+    System.out.println("s.indexOf(\"g\") == " + s.indexOf("g"));
+    System.out.println("s.indexOf(\"x\") == " + s.indexOf("x"));
+    System.out.println("s.startsWith(\"G\") == " + s.startsWith("G"));
+    System.out.println("s.endsWith(\"G\") == " + s.endsWith("G"));
+    System.out.println("s.toUpperCase().endsWith(\"G\") == " + s.toUpperCase().endsWith("G"));
+    System.out.println("s.substring(5,9) == " + s.substring(5,9));
+    System.out.println("s.substring(5) == " + s.substring(5));
+    System.out.println("s.replace(\"o\",\"x\") == " + s.replace("o","x"));
+    System.out.println("s.replace(\"oo\",\"ran\") == " + s.replace("oo","ran"));
+    System.out.println("s.contains(\"or\") == " + s.contains("or"));
+    System.out.println("s.contains(\"on\") == " + s.contains("on"));
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class Calculator {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Enter the first number: ");
+    int num1 = scan.nextInt();
+    System.out.print("Enter the second number: ");
+    int num2 = scan.nextInt();
+    int sum = num1 + num2;
+    System.out.println("The sum of " + num1 + " and " + num2 +
+                       " is " + sum);
+  }
+}
+
+Lecture 3
+---------
+
+public class BooleanDemo {
+  public static void main (String[] args) {
+    boolean a, b, c;
+    a = 5 > 3;
+    b = 5 != 3;
+    c = 5 < 3;
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    a = b || c;
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    b = a && c;
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    c = !b;
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    a = (5 > 3 && 5 < 3) || c;
+    System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class IfDemo {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Enter a month number: ");
+    int month = scan.nextInt();
+    if (month >= 1 && month <= 12) {
+      System.out.println("The month number is valid");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class IfElseDemo {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Enter a month number: ");
+    int month = scan.nextInt();
+    if (month >= 1 && month <= 12) {
+      System.out.println("The month number is valid");
+    }
+    else {
+      System.out.println("Invalid month number");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class ElseifDemo {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int n = scan.nextInt();
+    if (n == 0) {
+      System.out.println("The number is zero");
+    }
+    else if (n > 0) {
+      System.out.println("The number is positive");
+    }
+    else {
+      System.out.println("The number is negative");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+class Greetings {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Is it morning (m) or afternoon (a)? ");
+    String reply = scan.nextLine();
+    if (reply.charAt(0) == 'm') {   // morning
+      System.out.println("Good morning!");
+    }
+    else {                          // afternoon?
+      System.out.println("Good afternoon!");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+class Greetings {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Is it morning (m) or afternoon (a)? ");
+    String reply = scan.nextLine();
+    if (reply.charAt(0) == 'm' || reply.charAt(0) == 'M') {
+      System.out.println("Good morning!");
+    }
+    else {
+      System.out.println("Good afternoon!");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+class Greetings {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Is it morning (m) or afternoon (a)? ");
+    String reply = scan.nextLine().toLowerCase();
+    if (reply.charAt(0) == 'm') {
+      System.out.println("Good morning!");
+    }
+    else if (reply.charAt(0) == 'a') {
+      System.out.println("Good afternoon!");
+    }
+    else {
+      System.out.println("Please type 'm' or 'a'!");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+class Greetings {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Is it morning (m) or afternoon (a)? ");
+    String reply = scan.nextLine().toLowerCase();
+    switch (reply) {
+      case "m":
+      case "M":
+      case "morning":
+        System.out.println("Good Morning!");
+        break;
+      case "a":
+      case "A":
+      case "afternoon":
+        System.out.println("Good Afternoon!");
+        break;
+      default:
+        System.out.println("Please type 'm' or 'a'!");
+        break;
+    }
+  }
+}
+
+Lecture 4
+---------
+
+import java.util.Scanner;
+public class AddNumbers {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Enter a sequence of numbers (-1 to end): ");
+    int total = 0;
+    int number = scan.nextInt();
+    while (number >= 0) {
+      total = total + number;
+      number = scan.nextInt();
+    }
+    System.out.println("The total is " + total);
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class BreakDemo {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int total = 0;
+    while (true) {
+      System.out.print("Enter a number: ");
+      int number = scan.nextInt();
+      if (number < 0) {
+        break;
+      }
+      total += number;
+    }
+  }
+}
+
+---------
+
+public class RocketCountdown {
+  public static void main (String[] args) {
+    int num = 10;
+    while (num > 0) {
+      System.out.println(num);
+      num = num - 1;
+    }
+    System.out.println("Blast off!");
+  }
+}
+
+---------
+
+public class RocketCountdown {
+  public static void main (String[] args) {
+    for (int num = 10; num > 0; num = num - 1) {
+      System.out.println(num);
+    }
+    System.out.println("Blast off!");
+  }
+}
+
+---------
+
+public class ForDemo {
+  public static void main (String[] args) {
+    for (int n = 10; n > 0; n = n - 1) {
+      System.out.print(n + " ");
+    }
+    System.out.println("----");
+    for (int n = 0; n < 10; n = n + 1) {
+      System.out.print(n + " ");
+    }
+    System.out.println("----");
+    for (int n = 2; n <= 20; n = n + 2) {
+      System.out.print(n + " ");
+    }
+    System.out.println("----");
+    for (int n = 1; n < 100; n = n * 2) {
+      System.out.print(n + " ");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class PrintSquare {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int n = scan.nextInt();
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+        System.out.print(" *");
+      }
+      System.out.println();
+    }
+  }
+} 
+
+Lecture 5
+---------
+
+public class ArrayDemo {
+  public static void main (String[] args) {
+    int[] ia = new int[5];
+    System.out.println( ia.length );
+    String[] sa = { "Yes", "No", "Maybe" };
+    System.out.println( sa.length );
+    char[] ca = new char[0];
+    System.out.println( ca.length );
+  }
+}
+
+---------
+
+public class ArrayLoopDemo {
+  public static void main (String[] args) {
+    int[] ia = { 1, 2, 3, 5, 7, 11, 13, 17 };
+    for (int i = 0; i < ia.length; i++) {
+      System.out.println("Element " + i + " = " + ia[i]);
+    }
+    String[] sa = { "this", "that", "the other" };
+    for (String s : sa) {
+      System.out.println(s);
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class CharacterDemo {
+  public static void main (String[] args) {
+    int n = 1;
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the characters to process: ");
+    String line = scan.nextLine();
+    for (int i = 0; i < line.length(); i++) {
+      char c = line.charAt(i);
+      System.out.println("c = " + c + " (character number " + (int)c + ")");
+      System.out.println("Character.isLetter(c) = " + Character.isLetter(c));
+      System.out.println("Character.isDigit(c) = " + Character.isDigit(c));
+      System.out.println("Character.isUpperCase(c) = " + Character.isUpperCase(c));
+      System.out.println("Character.isLowerCase(c) = " + Character.isLowerCase(c));
+      System.out.println("Character.toUpperCase(c) = " + Character.toUpperCase(c));
+      System.out.println("Character.toLowerCase(c) = " + Character.toLowerCase(c));
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class CountLetters {
+  public static void main (String[] args) {
+    int[] count = new int[26];
+    Scanner scan = new Scanner(System.in);
+    String line = scan.nextLine();
+    // process the line
+    for (int i = 0; i < line.length(); i++) {
+      char c = line.charAt(i);
+      if (System.out("Character.isLetter(c) = " + Character.isLetter(c));) {
+        count[ System.out("Character.toUpperCase(c) = " + Character.toUpperCase(c)); - 'A' ]++;
+      }
+    }
+    // output the results
+    for (int i = 0; i < count.length; i++) {
+      char c = (char)('A' + i);
+      System.out.println(c + " occurs " + count[i] + " times");
+    }
+  }
+}
+
+---------
+
+public class StringEqualsDemo {
+  public static void main (String[] args) {
+    String s1 = "Hello";
+    //
+    //  The following line creates another string with the same value.
+    //  We can't just right "Hello" again or the compiler will
+    //  recognise that it's the same as before and use the same
+    //  string again -- we want a different string with the same value!
+    //
+    String s2 = (char)(72) + "ell" + s1.substring(4);
+    System.out.println("s1 = " + s1);
+    System.out.println("s2 = " + s2);
+    System.out.println("s1 == s2: " + (s1 == s2));
+    System.out.println("s1.equals(s2): " + s1.equals(s2));
+    
+  }
+}
+
+Lecture 6
+---------
+
+import java.util.Scanner;
+public class HollowSquare {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the size of the square: ");
+    int n = scan.nextInt();
+    repeatPrint(n, "* ");
+    System.out.println();
+    for (int i = 0; i < n - 2; i++) {
+      System.out.print("* ");
+      repeatPrint(n, "  ");
+      System.out.println("*");
+    }
+    repeatPrint(n, "* ");
+    System.out.println();
+  }
+  static void repeatPrint (int times, String value) {
+    for (int i = 0; i < times; i++) {
+      System.out.print(value);
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class ReturnDemo {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Test if a number is in an array of primes < 20");
+    System.out.println("Enter a number: ");
+    int n = scan.nextInt();
+    int[] a = { 2, 3, 5, 7, 11, 13, 17, 19 };
+    boolean b = contains(a,n);
+    if (b) {
+      System.out.println("The value " + n + " is in the array");
+    }
+    else {
+      System.out.println("The value " + n + " is not in the array");
+    }
+  }
+  static boolean contains (int[] array, int value) {
+    for (int a : array) {
+      if (a == value) {
+        return true;
+      }
+    }
+    return false;
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class RepeatStringDemo {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the size of the square: ");
+    int n = scan.nextInt();
+    System.out.println( repeatString(n,"* ") );
+    for (int i = 0; i < n - 2; i++) {
+      System.out.println( "* " + repeatString(n-2,"  ") + "*");
+    }
+    System.out.println( repeatString(n,"* ") );
+  }
+  static String repeatString (int times, String value) {
+    String s = "";
+    for (int i = 0; i < times; i++) {
+      s += value;
+    }
+    return s;
+  }
+}
+
+---------
+
+public class ReturnDemo {
+  public static void main (String[] args) {
+    int[] a = { 2, 3, 5, 7, -1, 13, 17, 19 };
+    System.out.println("The array is:");
+    for (int i : a) {
+      System.out.println(i);
+    }
+    System.out.println("The array up to the first negative value is:");
+    writeArray(a);
+  }
+  static void writeArray (int[] array) {
+    for (int n : array) {
+      if (n == 0) {
+        return; // exit as soon as a zero is found
+      }
+      System.out.println(n);
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+public class DocumentationDemo {
+  public static void main (String[] args) {
+    System.out.println("In BlueJ, open the source editor for DocumentationDemo");
+    System.out.println("then select \"Documentation\" instead of \"Source Code\"");
+    System.out.println("from the menu at the top right.");
+    System.out.println();
+
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the size of the square: ");
+    int n = scan.nextInt();
+    System.out.println( repeatString(n,"* ") );
+    for (int i = 0; i < n - 2; i++) {
+      System.out.println( "* " + repeatString(n-2,"  ") + "*");
+    }
+    System.out.println( repeatString(n,"* ") );
+  }
+  /**
+   *  Generate a repeated copy of a string.
+   *
+   *  @param times
+   *    the number of times to repeat the string.
+   *  @param value
+   *    the string value to be repeated.
+   *  @return
+   *    The string value repeated the specified number
+   *    of times.
+   */
+  public static String repeatString (int times, String value) {
+    String s = "";
+    for (int i = 0; i < times; i++) {
+      s += value;
+    }
+    return s;
+  }
+}
+
+Lecture 7
+---------
+
+/**
+ *   A class to represent a date.
+ *
+ *   @author   Tammy English
+ */
+class Date {
+  int day;      // the day part of the date
+  int month;    // the month part of the date
+  int year;     // the year part of the date
+}
+
+public class DateDemo {
+  public static void main (String[] args) {
+    System.out.println("In BlueJ, open the source editor for Date");
+    System.out.println("then select \"Documentation\" instead of \"Source Code\"");
+    System.out.println("from the menu at the top right.");
+    System.out.println();
+
+    Date when = new Date();
+    when.day   = 20; 
+    when.month = 7;
+    when.year  = 1969;
+    if (when.day == 20 && when.month == 7
+                       && when.year == 1969) {
+      System.out.println("The eagle has landed!");
+    }
+  }
+}
+
+---------
+
+class Date {
+  int day;
+  int month;
+  int year;
+  boolean valid () {      // a very incomplete implementation!
+    if (month < 1 || month > 12 ||
+        day < 1 || day > 31 ||
+        year < 1901 || year > 2099) {
+      return false;
+    }
+    return true;
+  }
+}
+
+public class DateDemo {
+  public static void main (String[] args) {
+    Date when = new Date();
+    when.day   = 20; 
+    when.month = 7;
+    when.year  = 1969;
+    System.out.print("The date " + when.day + "/" +
+                     when.month + "/" + when.year);
+    if (when.valid()) {
+      System.out.println(" is valid");
+    }
+    else {
+      System.out.println(" is invalid");
+    }
+    when.day   = 32; 
+    when.month = 0;
+    when.year  = 10000;
+    System.out.print("The date " + when.day + "/" +
+                     when.month + "/" + when.year);
+    if (when.valid()) {
+      System.out.println(" is valid");
+    }
+    else {
+      System.out.println(" is invalid");
+    }
+  }
+}
+
+---------
+
+public class Date {
+  private int day;
+  private int month;
+  private int year;
+  public boolean valid () {      // a very incomplete implementation!
+    if (month < 1 || month > 12 ||
+        day < 1 || day > 31 ||
+        year < 1901 || year > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public void setDate (int d, int m, int y) {
+    day   = d;
+    month = m;
+    year  = y;
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+}
+
+public class DateDemo {
+  public static void main (String[] args) {
+    Date when = new Date();
+    when.setDate(20,7,1969);
+    System.out.print("The date " + when.getDay() + "/" +
+                     when.getMonth() + "/" + when.getYear());
+    if (when.valid()) {
+      System.out.println(" is valid");
+    }
+    else {
+      System.out.println(" is invalid");
+    }
+    when.setDate(32,0,10000);
+    System.out.print("The date " + when.getDay() + "/" +
+                     when.getMonth() + "/" + when.getYear());
+    if (when.valid()) {
+      System.out.println(" is valid");
+    }
+    else {
+      System.out.println(" is invalid");
+    }
+  }
+}
+
+---------
+
+public class Date {
+  private int day;
+  private int month;
+  private int year;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+}
+
+public class DateDemo {
+  public static void main (String[] args) {
+    Date when = new Date();
+    when.setDate(20,7,1969);
+    System.out.println("The date is " + when.getDay() + "/" +
+                       when.getMonth() + "/" + when.getYear());
+    when.setDate(32,0,10000);
+    System.out.println("The date is " + when.getDay() + "/" +
+                       when.getMonth() + "/" + when.getYear());
+  }
+}
+
+---------
+
+public class Date {
+  private int day   = 1;
+  private int month = 1;
+  private int year  = 1901;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public Date(int day, int month, int year) {
+      setDate(day,month,year);
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+}
+
+public class DateDemo {
+  public static void main (String[] args) {
+    Date when = new Date(20,7,1969);
+    System.out.println("The date is " + when.getDay() + "/" +
+                       when.getMonth() + "/" + when.getYear());
+    Date other = new Date(32,0,10000);
+    System.out.println("The date is " + other.getDay() + "/" +
+                       other.getMonth() + "/" + other.getYear());
+//  Date now = new Date();   // illegal: no such constructor "Date()"
+  }
+}
+
+---------
+
+public class Date {
+  private int day;
+  private int month;
+  private int year;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public Date() {
+      setDate(1,1,1901);
+  }
+  public Date(int day, int month, int year) {
+      setDate(day,month,year);
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+}
+
+public class DateDemo {
+  public static void main (String[] args) {
+    Date when = new Date(20,7,1969);
+    System.out.println("The date is " + when.getDay() + "/" +
+                       when.getMonth() + "/" + when.getYear());
+    Date other = new Date(32,0,10000);
+    System.out.println("The date is " + other.getDay() + "/" +
+                       other.getMonth() + "/" + other.getYear());
+    Date now = new Date();
+    System.out.println("The date is " + now.getDay() + "/" +
+                       now.getMonth() + "/" + now.getYear());
+  }
+}
+
+---------
+
+public class BankAccount {
+  private int number;
+  private String name;
+  private long balance;
+  private static int nextNumber = 10000000;
+
+  public BankAccount (String name) {
+    this(name,0);
+  }
+  public BankAccount (String name, long balance) {
+    this.name = name;
+    this.balance = balance;
+    this.number = nextNumber++;
+  }
+
+  public int getAccountNumber() {
+    return number;
+  }
+  public String getName() {
+    return name;
+  }
+  public long getBalance() {
+    return balance;
+  }
+  public long deposit (long amount) {
+    if (amount > 0) {
+      amount = 0;
+    }
+    balance += amount;
+    return amount;
+  }
+  public long withdraw (long amount) {
+    if (amount > 0) {
+      amount = 0;
+    }
+    balance -= amount;
+    return amount;
+  }
+}
+
+public class BankAccountDemo {
+  public static void main (String[] args) {
+    BankAccount a = new BankAccount("Alice");
+    BankAccount b = new BankAccount("Bob",1000);
+    displayAccount(a);
+    displayAccount(b);
+    System.out.println("Deposit 800 to Alice, -100 to Bob:");
+    a.deposit(800);
+    b.deposit(-100);
+    displayAccount(a);
+    displayAccount(b);
+    System.out.println("Withdraw -50 from Alice, 500 from Bob:");
+    a.withdraw(-50);
+    b.withdraw(500);
+    displayAccount(a);
+    displayAccount(b);    
+  }
+  static void displayAccount(BankAccount ac) {
+    System.out.println(ac.getName() + " (account number " +
+                       ac.getAccountNumber() + "): " + ac.getBalance());
+  }
+}
+
+Lecture 8
+---------
+
+public class DateTime {
+  //
+  //  Copy everything from class Date...
+  //
+  private int day, month, year;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+  //
+  // Now add the extra things we need to represent a time:
+  //
+  private int hour, minute, second;
+  public DateTime() {
+    this(1,1,1901,0,0,0);
+  }
+  public DateTime(int day, int month, int year,
+                  int hour, int minute, int second) {
+    setDate(day,month,year);
+    setTime(hour,minute,second);
+  }
+  public int getHour() {
+    return hour;
+  }
+  public int getMinute() {
+    return minute;
+  }
+  public int getSecond() {
+    return second;
+  }
+  public void setTime (int hour, int minute, int second) {
+    this.hour   = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+}
+
+public class DateTimeDemo {
+  public static void main (String[] args) {
+    DateTime when = new DateTime(20,7,1969,14,30,00);
+    System.out.println("The date and time is " + when.getDay() +
+                       "/" + when.getMonth() + "/" + when.getYear() +
+                       " " + when.getHour() + ":" + when.getMinute() +
+                       ":" + when.getSecond());
+    DateTime other = new DateTime(32,0,10000,14,30,00);
+    System.out.println("The date and time is " + other.getDay() +
+                       "/" + other.getMonth() + "/" + other.getYear() +
+                       " " + other.getHour() + ":" + other.getMinute() +
+                       ":" + other.getSecond());
+    DateTime now = new DateTime();
+    System.out.println("The date is and time " + now.getDay() +
+                       "/" + now.getMonth() + "/" + now.getYear() +
+                       " " + now.getHour() + ":" + now.getMinute() +
+                       ":" + now.getSecond());
+  }
+}
+
+---------
+
+public class Date {
+  private int day;
+  private int month;
+  private int year;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public Date() {
+      setDate(1,1,1901);
+  }
+  public Date(int day, int month, int year) {
+      setDate(day,month,year);
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+}
+
+public class DateTime extends Date {
+  //
+  //  DateTime inherits all the properties and behaviour of Date,
+  //  so we just need to add the extra fields and methods that are
+  //  needed...
+  //
+  private int hour, minute, second;
+  public DateTime() {
+    this(1,1,1901,0,0,0);
+  }
+  public DateTime(int day, int month, int year,
+                  int hour, int minute, int second) {
+    setDate(day,month,year);
+    setTime(hour,minute,second);
+  }
+  public int getHour() {
+    return hour;
+  }
+  public int getMinute() {
+    return minute;
+  }
+  public int getSecond() {
+    return second;
+  }
+  public void setTime (int hour, int minute, int second) {
+    this.hour   = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+}
+
+public class DateTimeDemo {
+  public static void main (String[] args) {
+    DateTime when = new DateTime(20,7,1969,14,30,00);
+    System.out.println("The date and time is " + when.getDay() +
+                       "/" + when.getMonth() + "/" + when.getYear() +
+                       " " + when.getHour() + ":" + when.getMinute() +
+                       ":" + when.getSecond());
+    DateTime other = new DateTime(32,0,10000,14,30,00);
+    System.out.println("The date and time is " + other.getDay() +
+                       "/" + other.getMonth() + "/" + other.getYear() +
+                       " " + other.getHour() + ":" + other.getMinute() +
+                       ":" + other.getSecond());
+    DateTime now = new DateTime();
+    System.out.println("The date is and time " + now.getDay() +
+                       "/" + now.getMonth() + "/" + now.getYear() +
+                       " " + now.getHour() + ":" + now.getMinute() +
+                       ":" + now.getSecond());
+  }
+}
+
+---------
+
+public class Date {
+  private int day;
+  private int month;
+  private int year;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public Date() {
+      setDate(1,1,1901);
+  }
+  public Date(int day, int month, int year) {
+      setDate(day,month,year);
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+}
+
+public class DateTime {
+  //
+  //  A DateTime contains a Date object
+  //
+  private Date date;
+  //
+  //  It also contains three integers to store the time
+  //
+  private int hour, minute, second;
+  public DateTime() {
+    this(1,1,1901,0,0,0);
+  }
+  public DateTime(int day, int month, int year,
+                  int hour, int minute, int second) {
+    date = new Date(day,month,year);
+    setTime(hour,minute,second);
+  }
+  public int getDay() {
+    return date.getDay();
+  }
+  public int getMonth() {
+    return date.getMonth();
+  }
+  public int getYear() {
+    return date.getYear();
+  }
+  public int getHour() {
+    return hour;
+  }
+  public int getMinute() {
+    return minute;
+  }
+  public int getSecond() {
+    return second;
+  }
+  public void setTime (int hour, int minute, int second) {
+    this.hour   = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+}
+
+public class DateTimeDemo {
+  public static void main (String[] args) {
+    DateTime when = new DateTime(20,7,1969,14,30,00);
+    System.out.println("The date and time is " + when.getDay() +
+                       "/" + when.getMonth() + "/" + when.getYear() +
+                       " " + when.getHour() + ":" + when.getMinute() +
+                       ":" + when.getSecond());
+    DateTime other = new DateTime(32,0,10000,14,30,00);
+    System.out.println("The date and time is " + other.getDay() +
+                       "/" + other.getMonth() + "/" + other.getYear() +
+                       " " + other.getHour() + ":" + other.getMinute() +
+                       ":" + other.getSecond());
+    DateTime now = new DateTime();
+    System.out.println("The date is and time " + now.getDay() +
+                       "/" + now.getMonth() + "/" + now.getYear() +
+                       " " + now.getHour() + ":" + now.getMinute() +
+                       ":" + now.getSecond());
+  }
+}
+
+---------
+
+public class Date {
+  private int day;
+  private int month;
+  private int year;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public Date() {
+    setDate(1,1,1901);
+  }
+  public Date(int day, int month, int year) {
+    setDate(day,month,year);
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+}
+
+public class DateTime extends Date {
+  private int hour, minute, second;
+  public DateTime() {
+    super();
+  }
+  public DateTime(int day, int month, int year,
+                  int hour, int minute, int second) {
+    super(day,month,year);
+    setTime(hour,minute,second);
+  }
+  public int getHour() {
+    return hour;
+  }
+  public int getMinute() {
+    return minute;
+  }
+  public int getSecond() {
+    return second;
+  }
+  public void setTime (int hour, int minute, int second) {
+    this.hour   = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+}
+
+public class DateTimeDemo {
+  public static void main (String[] args) {
+    DateTime when = new DateTime(20,7,1969,14,30,00);
+    System.out.println("The date and time is " + when.getDay() +
+                       "/" + when.getMonth() + "/" + when.getYear() +
+                       " " + when.getHour() + ":" + when.getMinute() +
+                       ":" + when.getSecond());
+    DateTime other = new DateTime(32,0,10000,14,30,00);
+    System.out.println("The date and time is " + other.getDay() +
+                       "/" + other.getMonth() + "/" + other.getYear() +
+                       " " + other.getHour() + ":" + other.getMinute() +
+                       ":" + other.getSecond());
+    DateTime now = new DateTime();
+    System.out.println("The date is and time " + now.getDay() +
+                       "/" + now.getMonth() + "/" + now.getYear() +
+                       " " + now.getHour() + ":" + now.getMinute() +
+                       ":" + now.getSecond());
+  }
+}
+
+---------
+
+public class Date {
+  private int day;
+  private int month;
+  private int year;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public Date() {
+    setDate(1,1,1901);
+  }
+  public Date(int day, int month, int year) {
+    setDate(day,month,year);
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+  @Override
+  public String toString() {
+    return day + "/" + month + "/" + year;
+  }
+}
+
+public class DateTime extends Date {
+  private int hour, minute, second;
+  public DateTime() {
+    super();
+  }
+  public DateTime(int day, int month, int year,
+                  int hour, int minute, int second) {
+    super(day,month,year);
+    setTime(hour,minute,second);
+  }
+  public int getHour() {
+    return hour;
+  }
+  public int getMinute() {
+    return minute;
+  }
+  public int getSecond() {
+    return second;
+  }
+  public void setTime (int hour, int minute, int second) {
+    this.hour   = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+  @Override
+  public String toString() {
+    return super.toString() + " " + hour + ":" + minute + ":" + second;
+  }
+}
+
+public class DateTimeDemo {
+  public static void main (String[] args) {
+    Date when = new Date(20,7,1969);
+    DateTime other = new DateTime(20,7,1969,14,30,00);
+    System.out.println("The date is " + when.toString());
+    System.out.println("The date and time is " + other.toString());
+    //
+    //  toString() is used automatically when an object
+    //  needs to be converted to a string:
+    //
+    System.out.println("The date is " + when);
+    System.out.println("The date and time is " + other);
+  }
+}
+
+---------
+
+public class BankAccount {
+  private int number;
+  private String name;
+  private long balance;
+  private static int nextNumber = 10000000;
+
+  public BankAccount (String name) {
+    this(name,0);
+  }
+  public BankAccount (String name, long balance) {
+    this.name = name;
+    this.balance = balance;
+    this.number = nextNumber++;
+  }
+
+  public int getAccountNumber() {
+    return number;
+  }
+  public String getName() {
+    return name;
+  }
+  public long getBalance() {
+    return balance;
+  }
+  public long deposit (long amount) {
+    if (amount < 0) {
+      amount = 0;
+    }
+    balance += amount;
+    return amount;
+  }
+  public long withdraw (long amount) {
+    if (amount < 0) {
+      amount = 0;
+    }
+    balance -= amount;
+    return amount;
+  }
+}
+
+public class CurrentAccount extends BankAccount {
+  private long overdraftLimit = 5000;
+  public CurrentAccount (String name) {
+    super(name);
+  }
+  public CurrentAccount (String name, long balance) {
+    super(name,balance);
+  }
+  @Override
+  public long withdraw (long amount) {
+    if (getBalance() - amount < -5000) {
+      amount = 0;
+    }
+    return super.withdraw(amount);
+  }
+}
+
+import java.util.Scanner;
+public class AccountTest {
+  public static void main (String[] args) {
+    BankAccount     a = new BankAccount("Alice");
+    CurrentAccount  b = new CurrentAccount("Bob");
+
+    Scanner scan = new Scanner(System.in);
+    while (true) {
+      System.out.print("Enter amount (0 to exit): ");
+      int amt = scan.nextInt();
+      if (amt == 0) {
+        return;
+      } 
+      System.out.println("a: " + a.withdraw(amt) + " -> " + a.getBalance());
+      System.out.println("b: " + b.withdraw(amt) + " -> " + b.getBalance());
+    }
+  }
+}
+
+
+---------
+
+public class BankAccount {
+  private int number;
+  private String name;
+  private long balance;
+  private static int nextNumber = 10000000;
+
+  public BankAccount (String name) {
+    this(name,0);
+  }
+  public BankAccount (String name, long balance) {
+    this.name = name;
+    this.balance = balance;
+    this.number = nextNumber++;
+  }
+
+  public int getAccountNumber() {
+    return number;
+  }
+  public String getName() {
+    return name;
+  }
+  public long getBalance() {
+    return balance;
+  }
+  public long deposit (long amount) {
+    if (amount < 0) {
+      amount = 0;
+    }
+    balance += amount;
+    return amount;
+  }
+  public long withdraw (long amount) {
+    if (amount < 0) {
+      amount = 0;
+    }
+    balance -= amount;
+    return amount;
+  }
+}
+
+public class CurrentAccount extends BankAccount {
+  private long overdraftLimit = 5000;
+  public CurrentAccount (String name) {
+    super(name);
+  }
+  public CurrentAccount (String name, long balance) {
+    super(name,balance);
+  }
+  @Override
+  public long withdraw (long amount) {
+    if (getBalance() - amount < -5000) {
+      amount = 0;
+    }
+    return super.withdraw(amount);
+  }
+}
+
+public class LimitedAccount extends BankAccount {
+  public LimitedAccount (String name) {
+    super(name);
+  }
+  public LimitedAccount (String name, long balance) {
+    super(name,balance);
+  }
+  @Override
+  public long withdraw (long amount) {
+    if (amount > 5000) {
+      amount = 5000;
+    }
+    return super.withdraw(amount);
+  }
+}
+
+import java.util.Scanner;
+public class AccountTest {
+  public static void main (String[] args) {
+    BankAccount     a = new BankAccount("Alice");
+    CurrentAccount  b = new CurrentAccount("Bob");
+    LimitedAccount  c = new LimitedAccount("Carol");
+
+    Scanner scan = new Scanner(System.in);
+    while (true) {
+      System.out.print("Enter amount (0 to exit): ");
+      int amt = scan.nextInt();
+      if (amt == 0) {
+        return;
+      } 
+      System.out.println("a: " + a.withdraw(amt) + " -> " + a.getBalance());
+      System.out.println("b: " + b.withdraw(amt) + " -> " + b.getBalance());
+      System.out.println("c: " + c.withdraw(amt) + " -> " + c.getBalance());
+    }
+  }
+}
+
+Lecture 9
+---------
+
+public class Date {
+  private int day;
+  private int month;
+  private int year;
+  private boolean valid (int d, int m, int y) {
+    if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1901 || y > 2099) {
+      return false;
+    }
+    return true;
+  }
+  public Date() {
+      setDate(1,1,1901);
+  }
+  public Date(int day, int month, int year) {
+      setDate(day,month,year);
+  }
+  public int getDay() {
+    return day;
+  }
+  public int getMonth() {
+    return month;
+  }
+  public int getYear() {
+    return year;
+  }
+  public void setDate (int day, int month, int year) {
+    if ( valid(day,month,year) ) {
+      this.day   = day;
+      this.month = month;
+      this.year  = year;
+    }
+  }
+  @Override
+  public String toString() {
+    return day + "/" + month + "/" + year;
+  }
+}
+
+public class DateTime extends Date {
+  private int hour, minute, second;
+  public DateTime() {
+    this(1,1,1901,0,0,0)
+  }
+  public DateTime(int day, int month, int year,
+                  int hour, minute, second) {
+    super(day,month,year);
+    setTime(hour,minute,second)
+  }
+  public int getHour() {
+    return hour;
+  }
+  public int getMinute() {
+    return minute;
+  }
+  public int getSecond() {
+    return second;
+  }
+  public void setTime (int hour, int minute, int second) {
+    this.hour   = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+  @Override
+  public String toString() {
+    return super.toString() + " " + hour + ":" + minute + ":" + second;
+  }
+}
+
+import java.util.Scanner;
+public class PolymorphismDemo {
+  public static void main (String[] args) {
+    Date d = null;
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Enter a number >0 for a Date, <=0 for a DateTime: ");
+    if (scan.nextInt() > 0) {
+      d = new Date();
+    }
+    else {
+      d = new DateTime();
+    }
+    System.out.println("The date is " + d);
+  }
+}
+
+---------
+
+public class BankAccount {
+  private int number;
+  private String name;
+  private long balance;
+  private static int nextNumber = 10000000;
+
+  public BankAccount (String name) {
+    this(name,0);
+  }
+  public BankAccount (String name, long balance) {
+    this.name = name;
+    this.balance = balance;
+    this.number = nextNumber++;
+  }
+
+  public int getAccountNumber() {
+    return number;
+  }
+  public String getName() {
+    return name;
+  }
+  public long getBalance() {
+    return balance;
+  }
+  public long deposit (long amount) {
+    if (amount > 0) {
+      amount = 0;
+    }
+    balance += amount;
+    return amount;
+  }
+  public long withdraw (long amount) {
+    if (amount > 0) {
+      amount = 0;
+    }
+    balance -= amount;
+    return amount;
+  }
+}
+
+public class CurrentAccount extends BankAccount {
+  private long overdraftLimit = 5000;
+  public CurrentAccount (String name) {
+    super(name);
+  }
+  public CurrentAccount (String name, long balance) {
+    super(name,balance);
+  }
+  @Override
+  public long withdraw (long amount) {
+    if (getBalance() - amount < -5000) {
+      amount = 0;
+    }
+    return super.withdraw(amount);
+  }
+}
+
+class LimitedAccount extends BankAccount {
+  public LimitedAccount (String name) {
+    super(name);
+  }
+  public LimitedAccount (String name, long balance) {
+    super(name,balance);
+  }
+  @Override
+  public long withdraw (long amount) {
+    if (amount > 5000) {
+      amount = 5000;
+    }
+    return super.withdraw(amount);
+  }
+}
+
+import java.util.Scanner;
+public class AccountTest {
+public static void main (String args[]) {
+    Scanner scan = new Scanner(System.in);
+    BankAccount acct = null;
+    System.out.print("Account holder's name? ");
+    String name = scan.nextLine();
+    System.out.print("(B)asic, (C)urrent or (L)imited account? ");
+    String type = scan.nextLine();
+    switch (type.toUpperCase()) {
+      case "B":
+        acct = new BankAccount(name);
+        break;
+      case "C":
+        acct = new CurrentAccount(name);
+        break;
+      case "L":
+        acct = new LimitedAccount(name);
+        break;
+    }
+    while (true) {
+      System.out.print("Enter amount (0 to exit): ");
+      int amt = scan.nextInt();
+      if (amt == 0) {
+        return;
+      }
+      long result = acct.withdraw(amt);
+      System.out.println("You withdrew " + result);
+      System.out.println("Balance = " + acct.getBalance());
+    }
+  }
+}
+
+Lecture 11
+----------
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class Calculator {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    try {
+      System.out.print("Enter the first number: ");
+      int num1 = scan.nextInt();
+      System.out.print("Enter the second number: ");
+      int num2 = scan.nextInt();
+      int sum = num1 + num2;
+      System.out.println("The sum of " + num1 + " and " + num2 +
+                         " is " + sum);
+    }
+    catch (InputMismatchException e) {
+      System.out.println("You did not enter a number!");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class MultiCatchDemo {
+  public static void main (String[] args) {
+    int array[] = { 10,20,30,40 };
+    Scanner scan = new Scanner(System.in);
+    try {
+      System.out.print("Enter a number (0 to 3 will be valid): ");
+      int num1 = scan.nextInt();
+      System.out.println( array[num1] );
+    }
+    catch (InputMismatchException e) {
+      System.out.println("Please enter a number!");
+    }
+    catch (ArrayIndexOutOfBoundsException e) {
+      System.out.println("No such array element!");
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class ValidateDemo {
+  public static void main (String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int n = 0;
+    while (true) {
+      try {
+        System.out.print("Enter a number: ");
+        n = scan.nextInt();
+        break;
+      }
+      catch (InputMismatchException e) {
+        System.out.println("Please enter a number!");
+      }
+    }
+    System.out.println("You entered " + n);
+  }
+}
+
+---------
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class Calculator {
+  public static void main (String[] args) {
+    int num1 = readSafely("Enter the first number: ",
+                          "Please enter a number!");
+    int num2 = readSafely("Enter the second number: ",
+                          "Please enter a number!");
+    System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+  }
+  static int readSafely (String prompt, String error) {
+    Scanner scan = new Scanner(System.in);
+    while (true) {
+      try {
+        System.out.print(prompt);
+        return scan.nextInt();
+      }
+      catch (InputMismatchException e) {
+        System.out.println(error);
+      }
+    }
+  }
+}
+
+---------
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class ExceptionDemo {
+  public static void main (String[] args) {
+    System.out.println("This is a variation on the example in the lecture.");
+    System.out.println("Type in something which is not an integer to get");
+    System.out.println("an InputMismatchException, or type in 1 to get an");
+    System.out.println("ArithmeticException, or anything else to display");
+    System.out.println("the value of n/(n-1).");
+    try {
+      mightFail();
+    }
+    catch (Exception e) {
+      System.out.println("The following exception was caught:");
+      e.printStackTrace();
+    }
+  }
+  static int mightFail () {
+    try {
+      Scanner scan = new Scanner(System.in);
+      int n = scan.nextInt();
+      if (n > 0) {
+        n = n / (n-1);
+      }
+      return n;
+    }
+    catch (InputMismatchException e) {
+      System.out.println("The following InputMismatchException was caught:");
+      e.printStackTrace();
+    }
+    return 0;
+  }
+}

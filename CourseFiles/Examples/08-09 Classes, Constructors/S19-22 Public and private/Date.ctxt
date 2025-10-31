@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=boolean\ valid()
+comment1.params=d\ m\ y
+comment1.target=void\ setDate(int,\ int,\ int)
+comment2.params=
+comment2.target=int\ getDay()
+comment3.params=
+comment3.target=int\ getMonth()
+comment4.params=
+comment4.target=int\ getYear()
+numComments=5

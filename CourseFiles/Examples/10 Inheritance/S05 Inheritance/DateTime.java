@@ -1,0 +1,30 @@
+public class DateTime extends Date {
+  //
+  //  DateTime inherits all the properties and behaviour of Date,
+  //  so we just need to add the extra fields and methods that are
+  //  needed...
+  //
+  private int hour, minute, second;
+  public DateTime() {
+    this(1,1,1901,0,0,0);
+  }
+  public DateTime(int day, int month, int year,
+                  int hour, int minute, int second) {
+    setDate(day,month,year);
+    setTime(hour,minute,second);
+  }
+  public int getHour() {
+    return hour;
+  }
+  public int getMinute() {
+    return minute;
+  }
+  public int getSecond() {
+    return second;
+  }
+  public void setTime (int hour, int minute, int second) {
+    this.hour   = hour;
+    this.minute = minute;
+    this.second = second;
+  }
+}
