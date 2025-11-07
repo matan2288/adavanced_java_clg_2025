@@ -5,10 +5,10 @@ public class Drill2 {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a line of text: ");
         String input = scan.nextLine();
-        StringBuilder output = new StringBuilder();
+        String output = "";
 
-        for (int i = 0; i > -input.length(); i--) {
-            output.append(input.charAt(input.length() - 1));
+        for (int i = input.length() - 1; i >= 0; i--) {
+            output += input.charAt(i);
         }
 
         System.out.println(output);
