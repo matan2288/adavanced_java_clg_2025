@@ -1,3 +1,5 @@
+package Exercises.Qualigrade.Exercise2;
+
 public class Drill6 {
     public static boolean isReversible(String chars) {
         String input = chars;

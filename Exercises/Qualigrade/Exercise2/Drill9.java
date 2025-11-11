@@ -1,3 +1,5 @@
+package Exercises.Qualigrade.Exercise2;
+
 public class Drill9 {
 
     public boolean isSorted(int[] array) {
