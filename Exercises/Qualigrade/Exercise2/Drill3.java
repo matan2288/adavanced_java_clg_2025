@@ -1,3 +1,5 @@
+package Exercises.Qualigrade.Exercise2;
+
 import java.util.Scanner;
 
 public class Drill3 {

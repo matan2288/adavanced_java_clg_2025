@@ -1,3 +1,5 @@
+package Exercises.Qualigrade.Exercise2;
+
 public class Drill4 {
     public static void main(String[] args) {
         double[] numbers = {100, 95, 80};
