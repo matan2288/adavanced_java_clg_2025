@@ -1,3 +1,5 @@
+package Exercises.Qualigrade.Exercise2;
+
 public class Drill10 {
     public int getRange(int[] values) {
         int min = values[values.length - 1];
