@@ -1,3 +1,5 @@
+package Exercises.Qualigrade.Exercise2;
+
 // Fill in the body of the method below, which should return the position 
 // of the first occurrence of the number num in the array numbers, or -1 if num does not appear in numbers.
 //  (The positions in the array are numbered from 0 upwards, as usual in Java.)

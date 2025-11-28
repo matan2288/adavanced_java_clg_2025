@@ -1,3 +1,4 @@
+package Exercises.Qualigrade.Exercise1;
 
 import java.util.Scanner;
 import java.util.Random;
