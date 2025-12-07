@@ -1,0 +1,11 @@
+# n8n local data
+.env
+n8n-backup/
+.n8n/
+
+# Docker
+docker-compose.override.yml
+
+# OS
+.DS_Store
+Thumbs.db

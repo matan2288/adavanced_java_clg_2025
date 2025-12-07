@@ -1,0 +1,225 @@
+{
+  "name": "API Monitoring & Notification Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 10
+            }
+          ]
+        }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "id": "trigger-1"
+    },
+    {
+      "parameters": {
+        "url": "https://api.example.com/data",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "name": "HTTP Request - Get Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        470,
+        300
+      ],
+      "id": "http-request-1",
+      "notes": "Replace URL with your API endpoint. Add authentication in credentials if needed."
+    },
+    {
+      "parameters": {
+        "mode": "jsonToPairedItem",
+        "options": {}
+      },
+      "name": "Split In Batches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        690,
+        300
+      ],
+      "id": "split-batches-1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $json;\nconst imageUrl = item.metaData?.coverImage || '';\n\n// Extract timestamp from URL\nconst match = imageUrl.match(/\\/(\\d{14})\\.jpeg/);\nconst timestamp = match ? match[1] : null;\n\nif (timestamp) {\n  // Convert timestamp to readable format\n  const year = timestamp.substring(0, 4);\n  const month = timestamp.substring(4, 6);\n  const day = timestamp.substring(6, 8);\n  const time = timestamp.substring(8, 14);\n  \n  // Add processed data to item\n  item.uniqueId = item.token; // Unique identifier\n  item.postDate = `${day}/${month}/${year}`;\n  item.postTime = `${time.substring(0, 2)}:${time.substring(2, 4)}`;\n  item.fullTimestamp = timestamp;\n}\n\nreturn item;"
+      },
+      "name": "Extract Metadata",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        910,
+        300
+      ],
+      "id": "code-1",
+      "notes": "Modify this code to extract your unique identifier and other metadata"
+    },
+    {
+      "parameters": {
+        "operation": "differentiator",
+        "dataPropertyName": "uniqueId",
+        "options": {}
+      },
+      "name": "Check if New",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1130,
+        300
+      ],
+      "id": "differentiator-1",
+      "notes": "Use NoSQL Database node in real implementation. This checks if item is new or existing."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "value2": "New"
+            }
+          ]
+        }
+      },
+      "name": "If New Item",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1350,
+        300
+      ],
+      "id": "if-1"
+    },
+    {
+      "parameters": {
+        "fromEmail": "notifications@example.com",
+        "toEmail": "your-email@example.com",
+        "subject": "התראה: נתון חדש התקבל",
+        "text": "=נתון חדש נמצא:\n\nמזהה ייחודי: {{ $json.uniqueId }}\nתאריך: {{ $json.postDate }}\nשעה: {{ $json.postTime }}\n\nפרטים נוספים:\n{{ JSON.stringify($json, null, 2) }}",
+        "options": {}
+      },
+      "name": "Send Email Notification",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        1570,
+        200
+      ],
+      "id": "email-1",
+      "notes": "Configure your email credentials. Change recipient address."
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "collection": "monitored_items",
+        "options": {}
+      },
+      "name": "Update Database",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1570,
+        400
+      ],
+      "id": "database-1",
+      "notes": "Use NoSQL Database node to store uniqueId. Prevents duplicate notifications."
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request - Get Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request - Get Data": {
+      "main": [
+        [
+          {
+            "node": "Split In Batches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split In Batches": {
+      "main": [
+        [
+          {
+            "node": "Extract Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Metadata": {
+      "main": [
+        [
+          {
+            "node": "Check if New",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if New": {
+      "main": [
+        [
+          {
+            "node": "If New Item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If New Item": {
+      "main": [
+        [
+          {
+            "node": "Send Email Notification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-07T00:00:00.000Z",
+  "versionId": "1"
+}
