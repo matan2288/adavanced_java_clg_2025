@@ -18,13 +18,12 @@ class Window {
 
     @Override
     public String toString() {
-        return title + ":" + width + "x" + height;  // "Button : + 80 + x + 20"
+        return title + ":" + width + "x" + height;
     }
 }
 
 class Button extends Window {
     private String value;
-
     public Button(String title, int width, int height) {
         super("Button", height, width);
         this.value = title;
