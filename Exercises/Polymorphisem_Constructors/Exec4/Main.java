@@ -39,21 +39,7 @@ class Z extends Y {
 class Main {
     public static void main(String[] args) {
         Z a = new Z(5, 2, 3, 9);
-        // Z.a = 2 (field not updated)
-        // Z.b = 9 (updated by this.b = n2)
-        // Z.z = 11 (field not updated)
-        // X.n1 = 5 (set in X constructor)
-        // X.n2 = 2 (set in X constructor)
-        // Y.z = 5 (set in Y constructor)
-
         Z b = new Z(8, 10);
-        // Z.b = 10 (updated by this.b = n2 where n2=10)
-        // Z.a = 2 (field not updated, remains initial value)
-        // Z.z = 11 (field not updated)
-        // X.n1 = 8 (set in X constructor)
-        // X.n2 = 10 (set in X constructor)
-        // Y.z = 8 (set in Y constructor)
-
     }
 }
 /*

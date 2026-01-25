@@ -6,7 +6,7 @@ public class Five {
         int output = 0;
 
         for (int i = 0; i < intArr.length; i++) {
-            if (i % n == 0 && i > 0) {
+            if (i % n == 0 ) {
                 output += intArr[i];
             }
         }
